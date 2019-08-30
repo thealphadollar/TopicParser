@@ -24,10 +24,11 @@ Below are the steps to run the program:
 
 ### Using Python
 
-3. Run the program by `python3 -m genre_parser /path/to/json /path/to/csv`
+3. Install the dependencies using `pip3 install -r requirements.txt`
+4. Run the program by `python3 -m genre_parser /path/to/json /path/to/csv`
 
 
-NOTE: To know more about the package, use `genre-parser -h`.
+NOTE: To know more about the package, use `genre-parser -h` or `python3 -m genre_parser -h`.
 
 ## Environment Used
 
