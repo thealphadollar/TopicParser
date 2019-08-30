@@ -33,7 +33,7 @@ class GenreFinder:
                         self.books[book_index].genres[genre].update_average(keyword, keyword_count)
 
             for genre in book.get_top_genres():
-                print(f"{genre.name}, {genre.score}")
+                print(f"{genre.name}, {int(genre.score)}")
 
     def get_keywords(self, path_to_csv: str) -> None:
         """
