@@ -16,15 +16,20 @@ class GenreFinder:
 
     def find_genre(self) -> None:
         """Find top three genres for each book."""
+        # iterate through each book
         for book_index, book in enumerate(self.books):
             print(book.name)
             for keyword in self.keywords.values():
+                # find number of times the keyword is present in the description
                 keyword_count = book.description.count(keyword.name)
                 if keyword_count != 0:
                     for genre in keyword.genres:
+                        # if genre is already added to book, use it
+                        # create new Genre object otherwise
                         self.books[book_index].genres[genre] = self.books[
                             book_index
                         ].genres.get(genre, Genre(genre))
+                        # update average of the genre
                         self.books[book_index].genres[genre].update_average(keyword, keyword_count)
 
             for genre in book.get_top_genres():
@@ -44,13 +49,17 @@ class GenreFinder:
                 # if keyword is not present already
                 if self.keywords.get(value[CSV_KEYWORD_KEY].lstrip()) is None:
                     # removing beginning white space from keyword name and weights
-                    self.keywords[value[CSV_KEYWORD_KEY].lstrip()] = Keyword(value[CSV_KEYWORD_KEY].lstrip(),
-                                                                             value[CSV_GENRE_KEY].lstrip(),
-                                                                             int(value[CSV_POINTS_KEY].lstrip()))
+                    self.keywords[value[CSV_KEYWORD_KEY].lstrip()] = Keyword(
+                        value[CSV_KEYWORD_KEY].lstrip(),
+                        value[CSV_GENRE_KEY].lstrip(),
+                        int(value[CSV_POINTS_KEY].lstrip())
+                    )
                 # if keyword already present, just add genre and it's points
                 else:
                     # removing beginning white space from keyword name and weights
-                    self.keywords[value[CSV_KEYWORD_KEY].lstrip()].genres.append(value[CSV_GENRE_KEY].lstrip())
+                    self.keywords[value[CSV_KEYWORD_KEY].lstrip()].genres.append(
+                        value[CSV_GENRE_KEY].lstrip()
+                    )
                     self.keywords[value[CSV_KEYWORD_KEY].lstrip()].points[
                         value[CSV_GENRE_KEY].lstrip()
                     ] = int(value[CSV_POINTS_KEY].lstrip())
@@ -66,12 +75,9 @@ class GenreFinder:
             data = json.load(jsonFile)
 
         for value in data:
-            self.books.append(Book(value.get(JSON_BOOK_NAME_KEY), value.get(JSON_BOOK_DESC_KEY)))
+            self.books.append(Book(
+                value.get(JSON_BOOK_NAME_KEY),
+                value.get(JSON_BOOK_DESC_KEY))
+            )
 
         self.books = sorted(self.books, key=lambda book: book.name)
-
-    def _reset(self) -> None:
-        """Reset the GenreFinder to initial values for next book."""
-        for keyword in self.keywords.values():
-            keyword.hasOccurred = False
-        self.genres = dict()

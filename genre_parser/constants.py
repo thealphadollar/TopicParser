@@ -1,6 +1,6 @@
 """Module contains the constants used throughout the program."""
 
-# Accessing CSV Index
+# Accessing CSV
 CSV_GENRE_KEY = "Genre"
 CSV_KEYWORD_KEY = " Keyword"
 CSV_POINTS_KEY = " Points"

@@ -26,7 +26,8 @@ class Book:
         :param num: number of genres to return
         :return: list of top genres
         """
-        top_genres = nlargest(3, list(self.genres.values()), Genre.get_score)
+        # using heap to find top genres among all
+        top_genres = nlargest(num, list(self.genres.values()), Genre.get_score)
         top_genres = [genre for genre in top_genres if genre.score != 0]
         return top_genres
 
