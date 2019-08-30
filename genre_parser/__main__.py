@@ -1,3 +1,5 @@
+"""Module serving as the entry-point of the package genre_parser."""
+
 import fire
 
 from genre_parser.genreFinder import GenreFinder
@@ -21,6 +23,7 @@ def main(path_to_books_json: str, path_to_keywords_csv: str) -> None:
 
 
 def entry_point():
+    """Entry-point for executing as console script in setup.py."""
     fire.Fire(main)
 
 

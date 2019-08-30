@@ -1,3 +1,5 @@
+"""Pip installation script for genre-parser."""
+
 import sys
 from distutils.core import setup
 

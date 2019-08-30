@@ -8,8 +8,9 @@ from genre_parser.objects import Book, Genre, Keyword
 
 class GenreFinder:
     """Driving class to find genre of the books from description."""
+
     def __init__(self) -> None:
-        """Constructor for GenreFinder."""
+        """Construct new GenreFinder object."""
         self.keywords = dict()
         self.books = list()
 

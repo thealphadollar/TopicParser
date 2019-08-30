@@ -5,9 +5,10 @@ from typing import List
 
 class Book:
     """Class to store Book object."""
+
     def __init__(self, name: str, description: str) -> None:
         """
-        Constructor for Book.
+        Construct new Book object.
 
         :param name: name of the book
         :param description: description of the book
@@ -32,9 +33,10 @@ class Book:
 
 class Genre:
     """Class to store Genre object."""
+
     def __init__(self, name: str) -> None:
         """
-        Constructor for Genre.
+        Construct new Genre object.
 
         :param name: name of the genre
         """
@@ -73,9 +75,10 @@ class Genre:
 
 class Keyword:
     """Class to store Keyword object."""
+
     def __init__(self, name: str, genre: str, points: int) -> None:
         """
-        Constructor for Keyword.
+        Construct new Keyword object.
 
         :param name: name of the keyword
         :param genre: genre the keyword belongs to
