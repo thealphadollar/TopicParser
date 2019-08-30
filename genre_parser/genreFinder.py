@@ -2,8 +2,8 @@
 import csv
 import json
 
-from src.constants import *
-from src.objects import Book, Genre, Keyword
+from genre_parser.constants import *
+from genre_parser.objects import Book, Genre, Keyword
 
 
 class GenreFinder:

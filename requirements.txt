@@ -1,0 +1,11 @@
+fire==0.2.1
+isort==4.3.21
+mypy==0.720
+mypy-extensions==0.4.1
+pycodestyle==2.5.0
+pydocstyle==4.0.1
+six==1.12.0
+snowballstemmer==1.9.0
+termcolor==1.1.0
+typed-ast==1.4.0
+typing-extensions==3.7.4
