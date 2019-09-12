@@ -8,3 +8,7 @@ CSV_POINTS_KEY = " Points"
 # Accessing JSON
 JSON_BOOK_NAME_KEY = "title"
 JSON_BOOK_DESC_KEY = "description"
+
+# Endpoints
+BOOKS_ENDPOINT = "http://pairing-library.herokuapp.com/api/v1/books"
+BOOKS_ENDPOINT_PAGED = "http://pairing-library.herokuapp.com/api/v1/books?page="

@@ -5,7 +5,7 @@ import fire
 from genre_parser.genreFinder import GenreFinder
 
 
-def main(path_to_books_json: str, path_to_keywords_csv: str) -> None:
+def main(path_to_keywords_csv: str, path_to_books_json: str = None) -> None:
     """
     Find genre of the books using the provided keywords and the corresponding points.
 
@@ -20,6 +20,7 @@ def main(path_to_books_json: str, path_to_keywords_csv: str) -> None:
     genre_finder.get_keywords(path_to_keywords_csv)
     # find top genres and print
     genre_finder.find_genre()
+    genre_finder.top_genre_across()
 
 
 def entry_point():
